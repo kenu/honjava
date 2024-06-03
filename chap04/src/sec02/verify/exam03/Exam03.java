@@ -9,6 +9,13 @@ public class Exam03 {
 			if ((num1 + num2) == 5) {
 				break;
 			}
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				System.out.println("must run");
+			}
 		}
 	}
 }
