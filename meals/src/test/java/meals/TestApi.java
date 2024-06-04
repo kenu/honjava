@@ -8,7 +8,7 @@ public class TestApi {
 			String url = "https://open.neis.go.kr/hub/mealServiceDietInfo?key=" + API_KEY
 					+ "&ATPT_OFCDC_SC_CODE=B10&SD_SCHUL_CODE=7010916&type=json"
 					+ "&MLSV_FROM_YMD=20240501&MLSV_TO_YMD=20240630";
-			String result = JsonParserExample.fetchUrlContent(url);
+			String result = JsonParserExample.Meals.fetchUrlContent(url);
 			System.out.println(result);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -8,8 +8,8 @@ public class Main {
 		A.B b = a.new B();
 		b.field1 = 3;
 		b.method1();
-		//A.B.field2 = 3; //Java 17부터 허용
-		//A.B.method2(); 	//Java 17부터 허용
+		A.B.field2 = 3; //Java 17부터 허용
+		A.B.method2(); 	//Java 17부터 허용
 		
 		//정적 멤버 클래스 객체 생성
 		A.C c = new A.C();

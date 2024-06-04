@@ -5,10 +5,10 @@ public class SmartTelevisionExample {
 		SmartTelevision tv = new SmartTelevision();
 		
 		RemoteControl rc = tv;
-		//rc.turnOn();
-		//rc.setVolume(10);
+		rc.turnOn();
+		rc.setVolume(10);
 		
 		Searchable searchable = tv;
-		//searchable.search("http://www.google.com");
+		searchable.search("http://www.google.com");
 	}
 }
