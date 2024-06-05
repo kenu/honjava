@@ -10,7 +10,7 @@ public class TryCatchFinallyRuntimeExceptionExample {
 		} catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println("실행 매개값의 수가 부족합니다.");
 			return;
-		} 
+		}
 		
 		try { 
 			int value1 = Integer.parseInt(data1);

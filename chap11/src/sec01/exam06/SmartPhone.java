@@ -8,9 +8,10 @@ public class SmartPhone {
 		this.company = company;
 		this.os = os;
 	}
-	
+
 	@Override
 	public String toString() {
-		return company + ", " + os;
+		return "SmartPhone [company=" + company + ", os=" + os + "]";
 	}
+	
 }

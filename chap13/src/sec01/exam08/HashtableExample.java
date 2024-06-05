@@ -1,6 +1,8 @@
 package sec01.exam08;
 
-import java.util.*;
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.Scanner;
 
 public class HashtableExample {
 	public static void main(String[] args) {

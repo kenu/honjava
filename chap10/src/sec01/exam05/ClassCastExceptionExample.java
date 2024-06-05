@@ -10,9 +10,9 @@ public class ClassCastExceptionExample {
 	}
 	
 	public static void changeDog(Animal animal) {
-		//if(animal instanceof Dog) {
+		if(animal instanceof Dog) {
 			Dog dog = (Dog) animal; 				//ClassCastException 발생 가능
-		//} 
+		} 
 	}
 }
 

@@ -1,6 +1,6 @@
 package sec02.exam02;
 
-import java.util.*;
+import java.util.Calendar;
 
 public class CalendarExample {
 	public static void main(String[] args) {
