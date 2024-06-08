@@ -17,11 +17,12 @@ if ("lol".equals(set)) {
 	count = 24;
 }
 
-List<String> list = (List<String>) session.getAttribute("list");
-if (list == null || list.size() == 0) {
-	list = new Game().init(count);
-}
 String choice = request.getParameter("choice");
+List<String> list = (List<String>) session.getAttribute("list");
+if (list == null || list.size() == 0 || choice == null) {
+	list = new Game().init(count);
+	session.setAttribute("list", list);
+}
 if (choice != null) {
 	list.add(choice);
 	session.setAttribute("list", list);
@@ -40,6 +41,7 @@ list.remove(0);
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<h1><a href="./index.jsp">이상형 월드컵</a></h1>
 	size:
 	<%=list.size()%>
 	<div>
