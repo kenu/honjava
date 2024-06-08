@@ -3,10 +3,23 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
+<% 
+String set = request.getParameter("set");
+if (set == null) {
+	set = "over";
+}
+int count = 20;
+String ext = "png";
+if ("lol".equals(set)) {
+	count = 160;
+	ext = "jpg";
+} else if ("valo".equals(set)) {
+	count = 24;
+}
+
 List<String> list = (List<String>) session.getAttribute("list");
 if (list == null || list.size() == 0) {
-	list = new Game().init();
+	list = new Game().init(count);
 }
 String choice = request.getParameter("choice");
 if (choice != null) {
@@ -30,16 +43,16 @@ list.remove(0);
 	size:
 	<%=list.size()%>
 	<div>
-		<a href="game.jsp?choice=<%=left%>"> <img
-			src="imgs/over/<%=left%>.png">
-		</a> <a href="game.jsp?choice=<%=right%>"> <img
-			src="imgs/over/<%=right%>.png">
+		<a href="game.jsp?choice=<%=left%>&set=<%=set%>"> <img
+			src="imgs/<%= set %>/<%=left%>.<%= ext %>">
+		</a> <a href="game.jsp?choice=<%=right%>&set=<%=set%>"> <img
+			src="imgs/<%= set %>/<%=right%>.<%= ext %>">
 		</a>
 	</div>
 	<div>
 		<%
 		for (String num : list) {
-		%><img src="imgs/over/<%=num%>.png" style="width: 50px">
+		%><img src="imgs/<%= set %>/<%=num%>.<%= ext %>" style="width: 50px">
 		<%
 		}
 		%>
