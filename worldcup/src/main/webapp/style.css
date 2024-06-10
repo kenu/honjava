@@ -1,3 +1,8 @@
 img {
 	width: 240px;
 }
+
+.item {
+	border: 1px double #888;
+	display: inline-block;
+}
