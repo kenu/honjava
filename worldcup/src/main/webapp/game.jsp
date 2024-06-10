@@ -15,6 +15,9 @@ if ("lol".equals(set)) {
 	ext = "jpg";
 } else if ("valo".equals(set)) {
 	count = 24;
+} else if ("burger".equals(set)) {
+	count = 13;
+	ext = "jpg";
 }
 
 String choice = request.getParameter("choice");
@@ -51,7 +54,7 @@ list.remove(0);
 			src="imgs/<%= set %>/<%=right%>.<%= ext %>">
 		</a>
 	</div>
-	<div>
+	<div style="display: none;">
 		<%
 		for (String num : list) {
 		%><img src="imgs/<%= set %>/<%=num%>.<%= ext %>" style="width: 50px">
