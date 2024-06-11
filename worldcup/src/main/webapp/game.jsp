@@ -64,6 +64,7 @@ list.remove(0);
 				src="imgs/<%=set%>/<%=left%>.<%=ext%>"><br> <%=(set.equals("lol")) ? lolList.get(Integer.valueOf(left) - 1) : ""%>
 				<%=(set.equals("over")) ? overList.get(Integer.valueOf(left) - 1) : ""%>
 				<%=(set.equals("burger")) ? itemList.get(Integer.valueOf(left) - 1) : ""%>
+				<%=(set.equals("ww2")) ? ww2List.get(Integer.valueOf(left) - 1) : ""%>
 			</a>
 		</div>
 		<div class="item">
@@ -71,6 +72,7 @@ list.remove(0);
 				src="imgs/<%=set%>/<%=right%>.<%=ext%>"><br> <%=(set.equals("lol")) ? lolList.get(Integer.valueOf(right) - 1) : ""%>
 				<%=(set.equals("over")) ? overList.get(Integer.valueOf(right) - 1) : ""%>
 				<%=(set.equals("burger")) ? itemList.get(Integer.valueOf(right) - 1) : ""%>
+				<%=(set.equals("ww2")) ? ww2List.get(Integer.valueOf(right) - 1) : ""%>
 			</a>
 		</div>
 	</div>
