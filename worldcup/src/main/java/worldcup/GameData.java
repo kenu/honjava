@@ -60,4 +60,12 @@ public class GameData {
 		return chickenList;
 	}
 
+	public static List<String> getValmapsList(){
+		String[] maps = { "어비스", "선셋", "로터스", "펄", "프랙처", "브리즈" ,"아이스박스", "어센트", "헤이븐", "바인드", "스플릿", "디스트릭트"};
+		List<String> mapsList = new ArrayList<>();
+		for(String map : maps) {
+			mapsList.add(map);
+		}
+		return mapsList;
+	}
 }

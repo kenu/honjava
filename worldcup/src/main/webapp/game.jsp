@@ -8,6 +8,7 @@
 List<String> lolList = GameData.getLolList();
 List<String> overList = GameData.getOverList();
 List<String> itemList = GameData.getBurgerList();
+List<String> mapList = GameData.getValmapsList();
 
 String set = request.getParameter("set");
 if (set == null) {
@@ -25,6 +26,9 @@ if ("lol".equals(set)) {
 	ext = "jpg";
 } else if ("chicken".equals(set)) {
 	count = 16;
+} else if("valmaps".equals(set)) {
+	count = 12;
+	ext = "png";
 }
 
 String choice = request.getParameter("choice");
@@ -63,6 +67,7 @@ list.remove(0);
 				<%=(set.equals("lol")) ? lolList.get(Integer.valueOf(left) - 1) : ""%>
 				<%=(set.equals("over")) ? overList.get(Integer.valueOf(left) - 1) : ""%>
 				<%=(set.equals("burger")) ? itemList.get(Integer.valueOf(left) - 1) : ""%>
+				<%=(set.equals("valmaps")) ? mapList.get(Integer.valueOf(left) - 1) : ""%>
 			</a>
 		</div>
 		<div class="item">
@@ -71,6 +76,7 @@ list.remove(0);
 				<%=(set.equals("lol")) ? lolList.get(Integer.valueOf(right) - 1) : ""%>
 				<%=(set.equals("over")) ? overList.get(Integer.valueOf(right) - 1) : ""%>
 				<%=(set.equals("burger")) ? itemList.get(Integer.valueOf(right) - 1) : ""%>
+				<%=(set.equals("valmaps")) ? mapList.get(Integer.valueOf(right) - 1) : ""%>
 			</a>
 		</div>
 	</div>
