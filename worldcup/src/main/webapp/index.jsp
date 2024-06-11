@@ -7,10 +7,11 @@
 List<String> lolList = GameData.getLolList();
 List<String> overList = GameData.getOverList();
 List<String> itemList = GameData.getBurgerList();
+List<String> ww2List = GameData.getww2List();
 
 String set = request.getParameter("set");
 if (set == null) {
-	set = "over";
+	set = "ww2";
 }
 int count = 40;
 String ext = "png";
@@ -22,7 +23,11 @@ if ("lol".equals(set)) {
 } else if ("burger".equals(set)) {
 	count = 13;
 	ext = "jpg";
+} else if ("ww2".equals(set)) {
+	count = 20;
+	ext = "jpg";
 }
+
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -37,13 +42,15 @@ if ("lol".equals(set)) {
 	<a href="index.jsp?set=lol">lol</a> |
 	<a href="index.jsp?set=valo">valo</a> |
 	<a href="index.jsp?set=over">over</a> |
-	<a href="index.jsp?set=burger">burger</a>
+	<a href="index.jsp?set=burger">burger</a> |
+	<a href="index.jsp?set=ww2">ww2</a>
 
 	<hr />
 	<a href="game.jsp?set=lol">lol</a> |
 	<a href="game.jsp?set=valo">valo</a> |
 	<a href="game.jsp?set=over">over</a> |
-	<a href="game.jsp?set=burger">burger</a> 시작
+	<a href="game.jsp?set=burger">burger</a> |
+	<a href="game.jsp?set=ww2">ww2</a> 시작
 	<hr>
 	<%
 	for (int i = 1; i <= count; i++) {
@@ -54,6 +61,7 @@ if ("lol".equals(set)) {
 		<%=(set.equals("lol")) ? lolList.get(i - 1) : ""%>
 		<%=(set.equals("over")) ? overList.get(i - 1) : ""%>
 		<%=(set.equals("burger")) ? itemList.get(i - 1) : ""%>
+		<%=(set.equals("ww2")) ? ww2List.get(i - 1) : ""%>
 	</div>
 	<%
 	}
