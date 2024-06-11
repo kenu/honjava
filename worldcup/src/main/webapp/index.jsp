@@ -47,6 +47,7 @@ if ("lol".equals(set)) {
 	<hr>
 	<%
 	for (int i = 1; i <= count; i++) {
+		String imageFile = set + "/" + i + "." + ext;
 	%><div style="display: inline-block;">
 		<img src="imgs/<%=set%>/<%=i%>.<%=ext%>"><br>
 		<%= i %>
