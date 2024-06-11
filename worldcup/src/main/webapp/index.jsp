@@ -9,7 +9,7 @@ List<String> overList = GameData.getOverList();
 List<String> itemList = GameData.getBurgerList();
 List<String> ww2List = GameData.getww2List();
 List<String> mapList = GameData.getValmapsList();
-List<String> chickenList = GameData.getchickenList();
+List<String> chickenList = GameData.getChickenList();
 
 String set = request.getParameter("set");
 if (set == null) {
@@ -68,7 +68,7 @@ if ("lol".equals(set)) {
 	for (int i = 1; i <= count; i++) {
 		String imageFile = set + "/" + i + "." + ext;
 	%><div style="display: inline-block;">
-		<img src="imgs/<%=imgeFile%>"><br>
+		<img src="imgs/<%=imageFile%>"><br>
 		<%=i%>
 		<%=(set.equals("lol")) ? lolList.get(i - 1) : ""%>
 		<%=(set.equals("over")) ? overList.get(i - 1) : ""%>

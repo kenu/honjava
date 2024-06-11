@@ -61,7 +61,7 @@ public class GameData {
 			ww2List.add(ww2);
 		}
 		return ww2List;
-
+	}
     public static List<String> getChickenList() {
 		String[] chickens = { "굽네치킨", "맘스터치", "교촌치킨", "BBQ", "바른치킨", "BHC", "60계치킨", "푸라닭", "자담치킨", "노랑통닭", "네네치킨",
 				"호식이두마리치킨", "처갓집양념치킨", "지코바치킨", "페리카나", "깐부치킨" };
