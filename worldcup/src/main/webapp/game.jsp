@@ -24,6 +24,8 @@ if ("lol".equals(set)) {
 } else if ("burger".equals(set)) {
 	count = 13;
 	ext = "jpg";
+} else if ("chicken".equals(set)) {
+	count = 16;
 } else if("valmaps".equals(set)) {
 	count = 12;
 	ext = "png";

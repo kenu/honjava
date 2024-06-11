@@ -8,6 +8,7 @@ List<String> lolList = GameData.getLolList();
 List<String> overList = GameData.getOverList();
 List<String> itemList = GameData.getBurgerList();
 List<String> mapList = GameData.getValmapsList();
+List<String> chickenList = GameData.getchickenList();
 
 String set = request.getParameter("set");
 if (set == null) {
@@ -27,7 +28,10 @@ if ("lol".equals(set)) {
 } else if ("valmaps".equals(set)) {
 	count = 12;
 	ext = "png";
-	}
+} else if ("chicken".equals(set)) {
+	count = 16;
+	ext = "png";
+}
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -42,26 +46,28 @@ if ("lol".equals(set)) {
 	<a href="index.jsp?set=lol">lol</a> |
 	<a href="index.jsp?set=valo">valo</a> |
 	<a href="index.jsp?set=over">over</a> |
-	<a href="index.jsp?set=burger">burger</a>
-	<a href="index.jsp?set=valmaps">valmaps</a>
-
+	<a href="index.jsp?set=burger">burger</a> |
+	<a href="index.jsp?set=valmaps">valmaps</a> |
+  <a href="index.jsp?set=chicken">chicken</a>
 	<hr />
 	<a href="game.jsp?set=lol">lol</a> |
 	<a href="game.jsp?set=valo">valo</a> |
 	<a href="game.jsp?set=over">over</a> |
-	<a href="game.jsp?set=burger">burger</a>
-	<a href="game.jsp?set=valmaps">valmaps</a> 시작
+	<a href="game.jsp?set=burger">burger</a> |
+	<a href="game.jsp?set=valmaps">valmaps</a> |
+  <a href="game.jsp?set=chicken">chicken</a>시작
 	<hr>
 	<%
 	for (int i = 1; i <= count; i++) {
 		String imageFile = set + "/" + i + "." + ext;
 	%><div style="display: inline-block;">
-		 <img src="imgs/<%=set%>/<%=i%>.<%=ext%>"><br>
+		<img src="imgs/<%=imgeFile%>"><br>
 		<%=i%>
 		<%=(set.equals("lol")) ? lolList.get(i - 1) : ""%>
 		<%=(set.equals("over")) ? overList.get(i - 1) : ""%>
 		<%=(set.equals("burger")) ? itemList.get(i - 1) : ""%>
 		<%=(set.equals("valmaps")) ? mapList.get(i - 1) : ""%>
+		<%=(set.equals("chicken")) ? chickenList.get(i - 1) : ""%>
 	</div>
 	<%
 	}
