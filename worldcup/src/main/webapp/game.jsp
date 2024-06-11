@@ -9,6 +9,7 @@ List<String> lolList = GameData.getLolList();
 List<String> overList = GameData.getOverList();
 List<String> itemList = GameData.getBurgerList();
 List<String> ww2List = GameData.getww2List();
+List<String> mapList = GameData.getValmapsList();
 
 String set = request.getParameter("set");
 if (set == null) {
@@ -27,6 +28,11 @@ if ("lol".equals(set)) {
 } else if ("ww2".equals(set)) {
 	count = 20;
 	ext = "jpg";
+} else if ("chicken".equals(set)) {
+	count = 16;
+} else if("valmaps".equals(set)) {
+	count = 12;
+	ext = "png";
 }
 
 String choice = request.getParameter("choice");
@@ -65,6 +71,7 @@ list.remove(0);
 				<%=(set.equals("over")) ? overList.get(Integer.valueOf(left) - 1) : ""%>
 				<%=(set.equals("burger")) ? itemList.get(Integer.valueOf(left) - 1) : ""%>
 				<%=(set.equals("ww2")) ? ww2List.get(Integer.valueOf(left) - 1) : ""%>
+				<%=(set.equals("valmaps")) ? mapList.get(Integer.valueOf(left) - 1) : ""%>
 			</a>
 		</div>
 		<div class="item">
@@ -73,6 +80,7 @@ list.remove(0);
 				<%=(set.equals("over")) ? overList.get(Integer.valueOf(right) - 1) : ""%>
 				<%=(set.equals("burger")) ? itemList.get(Integer.valueOf(right) - 1) : ""%>
 				<%=(set.equals("ww2")) ? ww2List.get(Integer.valueOf(right) - 1) : ""%>
+				<%=(set.equals("valmaps")) ? mapList.get(Integer.valueOf(right) - 1) : ""%>
 			</a>
 		</div>
 	</div>

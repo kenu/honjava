@@ -8,6 +8,8 @@ List<String> lolList = GameData.getLolList();
 List<String> overList = GameData.getOverList();
 List<String> itemList = GameData.getBurgerList();
 List<String> ww2List = GameData.getww2List();
+List<String> mapList = GameData.getValmapsList();
+List<String> chickenList = GameData.getchickenList();
 
 String set = request.getParameter("set");
 if (set == null) {
@@ -15,6 +17,7 @@ if (set == null) {
 }
 int count = 40;
 String ext = "png";
+
 if ("lol".equals(set)) {
 	count = 167;
 	ext = "jpg";
@@ -26,6 +29,12 @@ if ("lol".equals(set)) {
 } else if ("ww2".equals(set)) {
 	count = 20;
 	ext = "jpg";
+} else if ("valmaps".equals(set)) {
+	count = 12;
+	ext = "png";
+} else if ("chicken".equals(set)) {
+	count = 16;
+	ext = "png";
 }
 
 %>
@@ -43,25 +52,30 @@ if ("lol".equals(set)) {
 	<a href="index.jsp?set=valo">valo</a> |
 	<a href="index.jsp?set=over">over</a> |
 	<a href="index.jsp?set=burger">burger</a> |
-	<a href="index.jsp?set=ww2">ww2</a>
-
+	<a href="index.jsp?set=ww2">ww2</a> |
+	<a href="index.jsp?set=valmaps">valmaps</a> |
+  <a href="index.jsp?set=chicken">chicken</a>
 	<hr />
 	<a href="game.jsp?set=lol">lol</a> |
 	<a href="game.jsp?set=valo">valo</a> |
 	<a href="game.jsp?set=over">over</a> |
 	<a href="game.jsp?set=burger">burger</a> |
-	<a href="game.jsp?set=ww2">ww2</a> 시작
+	<a href="game.jsp?set=ww2">ww2</a> |
+	<a href="game.jsp?set=valmaps">valmaps</a> |
+  <a href="game.jsp?set=chicken">chicken</a>시작
 	<hr>
 	<%
 	for (int i = 1; i <= count; i++) {
 		String imageFile = set + "/" + i + "." + ext;
 	%><div style="display: inline-block;">
-		<img src="imgs/<%=set%>/<%=i%>.<%=ext%>"><br>
-		<%= i %>
+		<img src="imgs/<%=imgeFile%>"><br>
+		<%=i%>
 		<%=(set.equals("lol")) ? lolList.get(i - 1) : ""%>
 		<%=(set.equals("over")) ? overList.get(i - 1) : ""%>
 		<%=(set.equals("burger")) ? itemList.get(i - 1) : ""%>
 		<%=(set.equals("ww2")) ? ww2List.get(i - 1) : ""%>
+		<%=(set.equals("valmaps")) ? mapList.get(i - 1) : ""%>
+		<%=(set.equals("chicken")) ? chickenList.get(i - 1) : ""%>
 	</div>
 	<%
 	}
