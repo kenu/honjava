@@ -7,12 +7,13 @@
 List<String> lolList = GameData.getLolList();
 List<String> overList = GameData.getOverList();
 List<String> itemList = GameData.getBurgerList();
+List<String> ww2List = GameData.getww2List();
 List<String> mapList = GameData.getValmapsList();
 List<String> chickenList = GameData.getchickenList();
 
 String set = request.getParameter("set");
 if (set == null) {
-	set = "over";
+	set = "ww2";
 }
 int count = 40;
 String ext = "png";
@@ -25,6 +26,9 @@ if ("lol".equals(set)) {
 } else if ("burger".equals(set)) {
 	count = 13;
 	ext = "jpg";
+} else if ("ww2".equals(set)) {
+	count = 20;
+	ext = "jpg";
 } else if ("valmaps".equals(set)) {
 	count = 12;
 	ext = "png";
@@ -32,6 +36,7 @@ if ("lol".equals(set)) {
 	count = 16;
 	ext = "png";
 }
+
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -47,6 +52,7 @@ if ("lol".equals(set)) {
 	<a href="index.jsp?set=valo">valo</a> |
 	<a href="index.jsp?set=over">over</a> |
 	<a href="index.jsp?set=burger">burger</a> |
+	<a href="index.jsp?set=ww2">ww2</a> |
 	<a href="index.jsp?set=valmaps">valmaps</a> |
   <a href="index.jsp?set=chicken">chicken</a>
 	<hr />
@@ -54,6 +60,7 @@ if ("lol".equals(set)) {
 	<a href="game.jsp?set=valo">valo</a> |
 	<a href="game.jsp?set=over">over</a> |
 	<a href="game.jsp?set=burger">burger</a> |
+	<a href="game.jsp?set=ww2">ww2</a> |
 	<a href="game.jsp?set=valmaps">valmaps</a> |
   <a href="game.jsp?set=chicken">chicken</a>시작
 	<hr>
@@ -66,6 +73,7 @@ if ("lol".equals(set)) {
 		<%=(set.equals("lol")) ? lolList.get(i - 1) : ""%>
 		<%=(set.equals("over")) ? overList.get(i - 1) : ""%>
 		<%=(set.equals("burger")) ? itemList.get(i - 1) : ""%>
+		<%=(set.equals("ww2")) ? ww2List.get(i - 1) : ""%>
 		<%=(set.equals("valmaps")) ? mapList.get(i - 1) : ""%>
 		<%=(set.equals("chicken")) ? chickenList.get(i - 1) : ""%>
 	</div>

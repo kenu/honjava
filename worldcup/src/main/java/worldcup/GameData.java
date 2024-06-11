@@ -50,7 +50,19 @@ public class GameData {
 		return itemList;
 	}
 
-	public static List<String> getchickenList() {
+	public static List<String> getww2List() {
+		String[] ww2s = { "베니토 무솔리니" , "아돌프 히틀러" , "윈스턴 처칠" , "미치노미야 히로히토" , "프랭클린 D. 루스벨트"
+				, "에르빈 롬멜" , "하인츠 구데리안" , "이오시프 스탈린" , "미하일 칼리닌" , "린 썬"
+				, "알베르 르브룅" , "네빌 체임벌린" , "해리 S. 트루먼" , "드와이트 D. 아이젠하워"
+				, "파울 요제프 괴벨스" , "앙드레 마지노" , "헬무트 라인베르거" , "필리프 페탱" , "아돌프 아이히만"
+				, "나구모 주이치" };
+		List<String> ww2List = new ArrayList<>();
+		for (String ww2 : ww2s) {
+			ww2List.add(ww2);
+		}
+		return ww2List;
+
+    public static List<String> getChickenList() {
 		String[] chickens = { "굽네치킨", "맘스터치", "교촌치킨", "BBQ", "바른치킨", "BHC", "60계치킨", "푸라닭", "자담치킨", "노랑통닭", "네네치킨",
 				"호식이두마리치킨", "처갓집양념치킨", "지코바치킨", "페리카나", "깐부치킨" };
 		List<String> chickenList = new ArrayList<>();
